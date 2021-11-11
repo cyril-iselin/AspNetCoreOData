@@ -5,6 +5,7 @@
 // </copyright>
 //------------------------------------------------------------------------------
 
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -14,7 +15,6 @@ using Microsoft.OData.Edm;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.OData.Routing.Conventions;
 using Microsoft.AspNetCore.OData;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.OData.Batch;
 using Microsoft.OData;
 using ODataRoutingSample.Models;
@@ -33,12 +33,11 @@ namespace ODataRoutingSample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            #region Codes for backup and use to compare with preview design/implementation
-            //services.AddControllers(options => {
-            //{
-            //    options.Conventions.Add(new MetadataApplicationModelConventionAttribute());
-            //    options.Conventions.Add(new MetadataActionModelConvention());
-            //});
+           // IEdmModel model0 = EdmModelBuilder.GetEdmModel();
+            //IEdmModel model1 = EdmModelBuilder.GetEdmModelV1();
+            //IEdmModel model2 = EdmModelBuilder.GetEdmModelV2();
+
+           
 
             /*services.AddConvention<MyConvention>();
             
@@ -51,9 +50,9 @@ namespace ODataRoutingSample
             services.AddODataFormatter();
             services.AddODataQuery(options => options.Count().Filter().Expand().Select().OrderBy().SetMaxTop(5));
             */
-            #endregion
 
-            services.AddDbContext<MyDataContext>(opt => opt.UseLazyLoadingProxies().UseInMemoryDatabase("MyDataContextList"));
+
+           // services.AddDbContext<MyDataContext>(opt => opt.UseLazyLoadingProxies().UseInMemoryDatabase("MyDataContextList"));
 
             IEdmModel model0 = EdmModelBuilder.GetEdmModel();
             IEdmModel model1 = EdmModelBuilder.GetEdmModelV1();

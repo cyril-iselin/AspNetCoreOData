@@ -70,10 +70,10 @@ namespace ODataRoutingSample.Models
             // bound action
             ActionConfiguration boundAction = builder.EntityType<Customer>().Action("BoundAction");
             boundAction.Parameter<int>("p1");
-            boundAction.Parameter<Address>("p2");
+           
             boundAction.Parameter<Color?>("color");
             boundAction.CollectionParameter<string>("p3");
-            boundAction.CollectionParameter<Address>("p4");
+            
             boundAction.CollectionParameter<Color?>("colors");
 
             // bound function for organization
@@ -119,11 +119,7 @@ namespace ODataRoutingSample.Models
             builder.Singleton<Order>("VipOrder");
             builder.Singleton<Category>("Categories");
 
-            var functionWithComplexTypeParameter = builder.EntityType<Order>().Function("CanMoveToAddress").Returns<bool>();
-            functionWithComplexTypeParameter.Parameter<Address>("address");
-
-            var functionWithCollectionComplexTypeParameter = builder.EntityType<Order>().Collection.Function("CanMoveToManyAddress").Returns<bool>();
-            functionWithCollectionComplexTypeParameter.CollectionParameter<Address>("addresses");
+           
 
             // function with optional parameters
             var functionWithOptional = builder.EntityType<Order>().Function("GetWholeSalary").ReturnsCollectionFromEntitySet<Order>("Orders");

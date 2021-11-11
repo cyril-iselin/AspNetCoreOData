@@ -51,12 +51,7 @@ namespace ODataRoutingSample.Controllers
                 {
                     AccountId = new Guid(startingGuid[i-1]),
                     Name = names[i - 1],
-                    HomeAddress = new Address
-                    {
-                        Street = $"Road No{num}",
-                        City = $"City No{num}"
-                    },
-                    AccountInfo = new AccountInfo
+                   AccountInfo = new AccountInfo
                     {
                         Id = i,
                         Balance = (rd.NextDouble() + 1.0) * 100

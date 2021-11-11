@@ -15,8 +15,7 @@ namespace ODataRoutingSample.Models
 
         public string Name { get; set; }
 
-        public Address HomeAddress { get; set; }
-
+     
         public AccountInfo AccountInfo { get; set; }
     }
 
