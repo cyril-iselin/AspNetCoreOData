@@ -8056,7 +8056,7 @@
             <returns>A SerializableError.</returns>
             <remarks>This function is recursive.</remarks>
         </member>
-        <member name="M:Microsoft.AspNetCore.OData.Query.EnableQueryAttribute.IsSuccessStatusCode(System.Int32)">
+        <member name="M:Microsoft.AspNetCore.OData.Query.EnableQueryAttribute.IsSuccessStatusCode(System.Nullable{System.Int32})">
             <summary>
             Determine if the status code indicates success.
             </summary>
